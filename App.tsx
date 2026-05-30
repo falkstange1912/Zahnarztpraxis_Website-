@@ -28,9 +28,6 @@ export default function App() {
           <a href="#bewertungen" className="hover:opacity-60 transition-opacity">Bewertungen</a>
         </div>
         <div className="flex items-center gap-4">
-          <button className="hidden sm:block text-sm font-medium hover:opacity-60 transition-opacity">
-            EN ⌵
-          </button>
           <a 
             href={TERMINLAND_URL}
             target="_blank"
@@ -123,7 +120,7 @@ export default function App() {
           </div>
         </section>
 
-        {/* NEU: 4. SPRECHZEITEN & TERMINE */}
+        {/* 4. SPRECHZEITEN & TERMINE */}
         <section id="sprechzeiten" className="py-32 px-6 max-w-[1200px] mx-auto border-t border-[var(--color-brand-green)]/5">
           <div className="grid lg:grid-cols-2 gap-16 items-start">
             <motion.div 
