@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
 import { Heart, Clock, Shield, Star, ArrowRight } from "lucide-react";
+import doktorImg from "./doktor.jpg";
 
 const fadeUp = {
   initial: { opacity: 0, y: 20 },
@@ -70,7 +71,7 @@ export default function App() {
               className="w-full max-w-[400px] aspect-[4/5] rounded-[40px] md:rounded-[60px] overflow-hidden shadow-sm relative group"
            >
               <img
-                 src="/doktor.jpg"
+                 src={doktorImg}
                  alt="Dr. med. Klaus Peter Brucker"
                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
