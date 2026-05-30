@@ -1,6 +1,5 @@
 import { motion } from "motion/react";
 import { Heart, Clock, Shield, Star, ArrowRight } from "lucide-react";
-import doktorImg from "./doktor.jpg";
 
 const fadeUp = {
   initial: { opacity: 0, y: 20 },
@@ -42,14 +41,14 @@ export default function App() {
               variants={fadeUp}
               className="font-serif text-5xl md:text-[5.5rem] leading-[1.05] tracking-tight"
             >
-              Lernen Sie die Menschen hinter Ihrer Gesundheit kennen.
+              Exzellente Medizin. <br />Persönliche Fürsorge.
             </motion.h1>
             <motion.p
               variants={fadeUp}
               className="text-xl md:text-2xl opacity-80 max-w-3xl font-light mx-auto leading-relaxed"
             >
-              Wir vereinen exzellente Allgemeinmedizin mit echter, persönlicher Fürsorge. 
-              Entdecken Sie eine Hausarztpraxis, bei der Sie als Mensch vollständig im Mittelpunkt stehen.
+              Wir vereinen moderne Allgemeinmedizin mit echter, menschlicher Begleitung. 
+              Entdecken Sie eine Hausarztpraxis in Cremlingen, bei der Ihr Wohlbefinden an erster Stelle steht.
             </motion.p>
             <motion.div variants={fadeUp} className="pt-6 flex flex-col sm:flex-row gap-4 justify-center w-full sm:w-auto">
                <button className="bg-[var(--color-brand-accent)] text-white px-8 py-3.5 rounded-full text-base font-medium hover:bg-[#d67b54] transition-colors">
@@ -62,34 +61,23 @@ export default function App() {
           </motion.div>
         </section>
 
-        {/* Hero Image (Dr. Brucker Profile) */}
-        <section className="px-6 mb-32 max-w-[1200px] mx-auto flex flex-col items-center">
+        {/* Hero Image (Modern Practice Room) */}
+        <section className="px-6 mb-32 max-w-[1200px] mx-auto">
            <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-              className="w-full max-w-[400px] aspect-[4/5] rounded-[40px] md:rounded-[60px] overflow-hidden shadow-sm relative group"
+              className="w-full aspect-[16/9] md:aspect-[21/9] rounded-[40px] md:rounded-[60px] overflow-hidden shadow-sm relative group"
            >
               <img
-                 src={doktorImg}
-                 alt="Dr. med. Klaus Peter Brucker"
+                 src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=2000&auto=format&fit=crop"
+                 alt="Moderne Hausarztpraxis Brucker in Cremlingen"
                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
            </motion.div>
-           
-           <motion.div 
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-              className="text-center mt-8"
-           >
-              <h2 className="font-serif text-3xl md:text-4xl font-medium mb-3 text-[var(--color-brand-green)]">
-                 Dr. med. Klaus Peter Brucker
-              </h2>
-              <p className="text-lg opacity-70 font-light flex items-center justify-center gap-2">
-                 <Shield className="w-4 h-4 text-[var(--color-brand-accent)]" /> Ihr vertrauensvoller Hausarzt in Cremlingen
-              </p>
-           </motion.div>
+           <div className="text-center mt-6 text-sm font-medium opacity-60 flex items-center justify-center gap-2">
+              <Shield className="w-4 h-4 text-[var(--color-brand-accent)]" /> Dr. med. Klaus Peter Brucker · Ihr Hausarzt in Cremlingen
+           </div>
         </section>
 
         {/* 3. DETAILS */}
@@ -113,11 +101,7 @@ export default function App() {
                 title="Zeit für Ihre Fragen"
                 desc="Gute Medizin braucht ein offenes Ohr. Wir nehmen uns die nötige Zeit für eine gründliche Diagnostik und erklären Ihnen Befunde verständlich und ohne Zeitdruck."
               />
-              <FeatureCard
-                icon={<Shield className="w-6 h-6 text-[var(--color-brand-accent)]" />}
-                title="Moderne Vorsorge"
-                desc="Durch kontinuierliche Weiterbildungen unseres gesamten Teams und den Einsatz moderner Diagnostikverfahren bieten wir Ihnen eine hausärztliche Betreuung auf Premium-Niveau."
-              />
+              <ShieldCard />
             </div>
           </div>
         </section>
@@ -206,6 +190,24 @@ function FeatureCard({ icon, title, desc }: { icon: React.ReactNode, title: stri
       </div>
       <h3 className="font-serif text-2xl font-medium mb-4">{title}</h3>
       <p className="opacity-70 leading-relaxed font-light">{desc}</p>
+    </motion.div>
+  );
+}
+
+function ShieldCard() {
+  return (
+    <motion.div
+       variants={fadeUp}
+       initial="initial"
+       whileInView="animate"
+       viewport={{ once: true, margin: "-100px" }}
+       className="flex flex-col items-center text-center p-10 rounded-[40px] bg-[var(--color-brand-bg)] border border-[var(--color-brand-green)]/5 hover:border-[var(--color-brand-green)]/10 transition-colors duration-500"
+    >
+      <div className="w-16 h-16 rounded-full bg-[var(--color-brand-accent)]/10 flex items-center justify-center mb-8">
+        <Shield className="w-6 h-6 text-[var(--color-brand-accent)]" />
+      </div>
+      <h3 className="font-serif text-2xl font-medium mb-4">Moderne Vorsorge</h3>
+      <p className="opacity-70 leading-relaxed font-light">Durch kontinuierliche Weiterbildungen unseres gesamten Teams und den Einsatz moderner Diagnostikverfahren bieten wir Ihnen eine hausärztliche Betreuung auf Premium-Niveau.</p>
     </motion.div>
   );
 }
