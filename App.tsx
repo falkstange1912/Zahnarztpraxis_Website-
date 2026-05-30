@@ -29,7 +29,7 @@ export default function App() {
             EN ⌵
           </button>
           <button className="px-6 py-2.5 bg-[var(--color-brand-accent)] text-white rounded-full text-sm font-medium hover:bg-[#d67b54] transition-colors">
-            Jetzt buchen
+            Termin buchen
           </button>
         </div>
       </nav>
@@ -42,21 +42,21 @@ export default function App() {
               variants={fadeUp}
               className="font-serif text-5xl md:text-[5.5rem] leading-[1.05] tracking-tight"
             >
-              Lernen Sie den Menschen hinter Ihrem Lächeln kennen.
+              Lernen Sie die Menschen hinter Ihrer Gesundheit kennen.
             </motion.h1>
             <motion.p
               variants={fadeUp}
               className="text-xl md:text-2xl opacity-80 max-w-3xl font-light mx-auto leading-relaxed"
             >
-              Wir vereinen exzellente Zahnmedizin mit echter, persönlicher Fürsorge. 
-              Entdecken Sie eine Praxis, bei der Sie als Mensch vollständig im Mittelpunkt stehen.
+              Wir vereinen exzellente Allgemeinmedizin mit echter, persönlicher Fürsorge. 
+              Entdecken Sie eine Hausarztpraxis, bei der Sie als Mensch vollständig im Mittelpunkt stehen.
             </motion.p>
             <motion.div variants={fadeUp} className="pt-6 flex flex-col sm:flex-row gap-4 justify-center w-full sm:w-auto">
                <button className="bg-[var(--color-brand-accent)] text-white px-8 py-3.5 rounded-full text-base font-medium hover:bg-[#d67b54] transition-colors">
                  Termin vereinbaren
                </button>
                <button className="border border-[var(--color-brand-green)] px-8 py-3.5 rounded-full text-base font-medium hover:bg-[var(--color-brand-green)] hover:text-white transition-colors">
-                 Unsere Leistungen
+                 Unser Leistungsspektrum
                </button>
             </motion.div>
           </motion.div>
@@ -87,7 +87,7 @@ export default function App() {
                  Dr. med. Klaus Peter Brucker
               </h2>
               <p className="text-lg opacity-70 font-light flex items-center justify-center gap-2">
-                 <Shield className="w-4 h-4 text-[var(--color-brand-accent)]" /> Ihr vertrauensvoller Zahnarzt in Cremlingen
+                 <Shield className="w-4 h-4 text-[var(--color-brand-accent)]" /> Ihr vertrauensvoller Hausarzt in Cremlingen
               </p>
            </motion.div>
         </section>
@@ -98,25 +98,25 @@ export default function App() {
             <div className="text-center mb-20">
               <h2 className="font-serif text-4xl md:text-5xl tracking-tight mb-6">Fürsorge in jedem Detail</h2>
               <p className="opacity-70 max-w-2xl mx-auto text-lg font-light">
-                 Ein starkes Team, das hinter einer gemeinsamen Philosophie steht: Ihre Gesundheit, Ihr Vertrauen und Ihr absolutes Wohlbefinden.
+                 Ein erfahrenes Praxisteam, das hinter einer gemeinsamen Philosophie steht: Ihre langfristige Gesundheit, Ihr Vertrauen und Ihr absolutes Wohlbefinden.
               </p>
             </div>
 
             <div className="grid md:grid-cols-3 gap-12 lg:gap-16">
               <FeatureCard
                 icon={<Heart className="w-6 h-6 text-[var(--color-brand-accent)]" />}
-                title="Von Mensch zu Mensch"
-                desc="Wir behandeln nicht nur Zähne, sondern Menschen. Mit viel Einfühlungsvermögen sorgen wir für eine stress- und angstfreie Behandlung in einer ruhigen Atmosphäre."
+                title="Ganzheitliche Medizin"
+                desc="Wir betrachten nicht nur isolierte Symptome, sondern Sie als gesamten Menschen. Unser Ziel ist eine nachhaltige Begleitung für Ihre Gesundheit und Lebensqualität."
               />
               <FeatureCard
                 icon={<Clock className="w-6 h-6 text-[var(--color-brand-accent)]" />}
-                title="Zeit für Sie"
-                desc="Bei uns gibt es keine Massenabfertigung. Wir nehmen uns die Zeit, Ihnen genau zuzuhören und erarbeiten gemeinsam einen individuellen Therapieplan ohne Zeitdruck."
+                title="Zeit für Ihre Fragen"
+                desc="Gute Medizin braucht ein offenes Ohr. Wir nehmen uns die nötige Zeit für eine gründliche Diagnostik und erklären Ihnen Befunde verständlich und ohne Zeitdruck."
               />
               <FeatureCard
                 icon={<Shield className="w-6 h-6 text-[var(--color-brand-accent)]" />}
-                title="Höchste Expertise"
-                desc="Durch stetige Weiterbildungen unseres gesamten Teams und den Einsatz modernster Technologien garantieren wir Ihnen Zahnmedizin auf Premium-Niveau."
+                title="Moderne Vorsorge"
+                desc="Durch kontinuierliche Weiterbildungen unseres gesamten Teams und den Einsatz moderner Diagnostikverfahren bieten wir Ihnen eine hausärztliche Betreuung auf Premium-Niveau."
               />
             </div>
           </div>
@@ -128,7 +128,7 @@ export default function App() {
              <div className="max-w-xl">
                <h2 className="font-serif text-4xl md:text-5xl tracking-tight mb-6">Das sagen unsere Patienten</h2>
                <p className="opacity-70 text-lg font-light">
-                  Vertrauen muss man sich verdienen. Viele zufriedene Patienten haben bei uns ihr strahlendes Lächeln wiedergefunden.
+                  Medizinisches Vertrauen ist die Basis unserer Arbeit. Viele zufriedene Patienten schätzen unsere persönliche und fachliche Betreuung seit Jahren.
                </p>
              </div>
              <div className="flex -space-x-4 mb-4">
@@ -141,17 +141,17 @@ export default function App() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
              <Testimonial
-                text="Ich hatte mein ganzes Leben lang große Angst vor dem Zahnarzt. Dr. Brucker und das Praxisteam haben mich so warmherzig empfangen, dass meine Sorgen sofort verflogen sind."
+                text="Ich habe mich noch nie bei einem Arzt so gut aufgehoben gefühlt. Dr. Brucker nimmt sich unglaublich viel Zeit und erklärt alles verständlich. Das gesamte Team ist herzlich."
                 author="Laura M."
                 details="Patientin seit 2021"
              />
              <Testimonial
-                text="Eine unglaublich schöne, moderne Praxis und ein extrem kompetentes Team. Man fühlt sich vom ersten Moment an in den besten Händen. Die Beratung war hervorragend."
+                text="Eine hervorragend organisierte Praxis mit minimalen Wartezeiten. Die medizinische Betreuung ist hochkompetent und man fühlt sich vom ersten Moment an ernst genommen."
                 author="Markus T."
                 details="Patient seit 2023"
              />
              <Testimonial
-                text="Endlich ein Zahnarzt, der sich wirklich Zeit nimmt. Das Ergebnis meiner Behandlung ist perfekt geworden. Großes Lob und Danke an jeden Einzelnen!"
+                text="Endlich ein eingespieltes Team, bei dem die Empathie nicht zu kurz kommt. Die Diagnostik war gründlich und die Behandlung hat mir sehr geholfen. Absolut empfehlenswert!"
                 author="Sabine K."
                 details="Patientin seit 2019"
              />
@@ -164,16 +164,16 @@ export default function App() {
             <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle at center, #ffffff 1px, transparent 1px)', backgroundSize: '24px 24px' }}></div>
             
             <div className="max-w-4xl mx-auto space-y-10 relative z-10">
-              <h2 className="font-serif text-5xl md:text-[5rem] leading-[1.05] tracking-tight">Erleben Sie den Unterschied.</h2>
+              <h2 className="font-serif text-5xl md:text-[5rem] leading-[1.05] tracking-tight">Gemeinsam für Ihre Gesundheit.</h2>
               <p className="text-[#fdfbf7]/80 text-xl md:text-2xl font-light max-w-2xl mx-auto">
-                 Machen Sie den ersten Schritt zu einem gesunden Lächeln. Wir freuen uns darauf, Sie kennenzulernen.
+                 Planen Sie Ihren nächsten Vorsorgetermin oder besprechen Sie Ihr Anliegen persönlich mit uns. Wir sind für Sie da.
               </p>
               <div className="pt-6">
                 <button className="bg-[var(--color-brand-accent)] hover:bg-[#d67b54] text-white px-10 py-5 rounded-full text-lg font-medium transition-all duration-300 hover:shadow-xl hover:scale-105 flex items-center mx-auto">
                   Termin online vereinbaren
                   <ArrowRight className="w-5 h-5 ml-2" />
                 </button>
-                <p className="mt-6 text-sm text-[#fdfbf7]/50 font-medium">Bequeme Online-Buchung · Neupatienten willkommen</p>
+                <p className="mt-6 text-sm text-[#fdfbf7]/50 font-medium">Bequeme Online-Terminierung · Alle Kassen & Privatpatienten</p>
               </div>
             </div>
           </div>
