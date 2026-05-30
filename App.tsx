@@ -1,5 +1,8 @@
 import { motion } from "motion/react";
-import { Heart, Clock, Shield, Star, ArrowRight, MapPin, Phone, Car, Bus, CheckCircle, Mail } from "lucide-react";
+import { Heart, Clock, Shield, Star, ArrowRight, MapPin, Phone, Car, Bus, CheckCircle, Mail, Calendar } from "lucide-react";
+
+// HIER DEN EXAKTEN LINK EINTRAGEN, SOBALD DU IHN HAST:
+const TERMINLAND_URL = "https://www.terminland.de";
 
 const fadeUp = {
   initial: { opacity: 0, y: 20 },
@@ -19,18 +22,23 @@ export default function App() {
         <div className="font-serif text-2xl font-semibold tracking-tight">Praxis Brucker.</div>
         <div className="hidden lg:flex space-x-8 text-sm font-medium">
           <a href="#praxis" className="hover:opacity-60 transition-opacity">Die Praxis</a>
-          <a href="#philosophie" className="hover:opacity-60 transition-opacity">Philosophie</a>
+          <a href="#sprechzeiten" className="hover:opacity-60 transition-opacity">Sprechzeiten</a>
           <a href="#standorte" className="hover:opacity-60 transition-opacity">Standorte</a>
-          <a href="#karriere" className="hover:opacity-60 transition-opacity text-[var(--color-brand-accent)]">Karriere</a>
+          <a href="#karriere" className="hover:opacity-60 transition-opacity">Karriere</a>
           <a href="#bewertungen" className="hover:opacity-60 transition-opacity">Bewertungen</a>
         </div>
         <div className="flex items-center gap-4">
           <button className="hidden sm:block text-sm font-medium hover:opacity-60 transition-opacity">
             EN ⌵
           </button>
-          <button className="px-6 py-2.5 bg-[var(--color-brand-accent)] text-white rounded-full text-sm font-medium hover:bg-[#d67b54] transition-colors">
+          <a 
+            href={TERMINLAND_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-6 py-2.5 bg-[var(--color-brand-accent)] text-white rounded-full text-sm font-medium hover:bg-[#d67b54] transition-colors"
+          >
             Termin buchen
-          </button>
+          </a>
         </div>
       </nav>
 
@@ -52,12 +60,20 @@ export default function App() {
               Entdecken Sie eine Hausarztpraxis, bei der Ihr Wohlbefinden an erster Stelle steht.
             </motion.p>
             <motion.div variants={fadeUp} className="pt-6 flex flex-col sm:flex-row gap-4 justify-center w-full sm:w-auto">
-               <button className="bg-[var(--color-brand-accent)] text-white px-8 py-3.5 rounded-full text-base font-medium hover:bg-[#d67b54] transition-colors">
+               <a 
+                 href={TERMINLAND_URL}
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 className="bg-[var(--color-brand-accent)] text-white px-8 py-3.5 rounded-full text-base font-medium hover:bg-[#d67b54] transition-colors text-center"
+               >
                  Termin vereinbaren
-               </button>
-               <button className="border border-[var(--color-brand-green)] px-8 py-3.5 rounded-full text-base font-medium hover:bg-[var(--color-brand-green)] hover:text-white transition-colors">
-                 Unser Leistungsspektrum
-               </button>
+               </a>
+               <a 
+                 href="#sprechzeiten" 
+                 className="border border-[var(--color-brand-green)] px-8 py-3.5 rounded-full text-base font-medium hover:bg-[var(--color-brand-green)] hover:text-white transition-colors text-center"
+               >
+                 Öffnungszeiten
+               </a>
             </motion.div>
           </motion.div>
         </section>
@@ -107,8 +123,92 @@ export default function App() {
           </div>
         </section>
 
-        {/* 4. STANDORTE & ANFAHRT */}
-        <section id="standorte" className="py-32 px-6 max-w-[1200px] mx-auto">
+        {/* NEU: 4. SPRECHZEITEN & TERMINE */}
+        <section id="sprechzeiten" className="py-32 px-6 max-w-[1200px] mx-auto border-t border-[var(--color-brand-green)]/5">
+          <div className="grid lg:grid-cols-2 gap-16 items-start">
+            <motion.div 
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="space-y-8"
+            >
+              <div>
+                <span className="text-sm font-bold tracking-widest uppercase text-[var(--color-brand-accent)] mb-4 block">Termine</span>
+                <h2 className="font-serif text-4xl md:text-5xl tracking-tight mb-6">Sprechzeiten &<br/>Organisation</h2>
+              </div>
+              
+              <p className="opacity-70 text-lg font-light leading-relaxed">
+                Um Wartezeiten zu vermeiden, vereinbaren Sie bitte – gerne auch telefonisch während der Sprechstunde – einen für Sie günstigen Termin. 
+              </p>
+
+              <div className="bg-white p-8 rounded-[30px] border border-[var(--color-brand-green)]/10 shadow-sm relative overflow-hidden">
+                <div className="absolute top-0 left-0 w-2 h-full bg-[var(--color-brand-accent)]"></div>
+                <h4 className="font-medium text-lg mb-3 flex items-center gap-2">
+                  <Calendar className="w-5 h-5 text-[var(--color-brand-accent)]" /> 
+                  Terminabsage
+                </h4>
+                <p className="text-base font-light opacity-80 leading-relaxed">
+                  Sollten Sie einen vereinbarten Termin einmal nicht einhalten können, sagen Sie bitte <strong>ein bis zwei Tage vorher</strong> ab, damit wir den Termin anderweitig vergeben können.
+                </p>
+              </div>
+
+              <div>
+                <a 
+                  href={TERMINLAND_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 bg-[var(--color-brand-accent)] hover:bg-[#d67b54] text-white px-8 py-4 rounded-full text-base font-medium transition-colors shadow-sm"
+                >
+                  <Calendar className="w-5 h-5" />
+                  Jetzt Termin online buchen
+                </a>
+              </div>
+            </motion.div>
+
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="bg-white p-8 md:p-12 rounded-[40px] border border-[var(--color-brand-green)]/10 shadow-sm"
+            >
+              <h3 className="font-serif text-3xl mb-8">Unsere Öffnungszeiten</h3>
+              <ul className="space-y-4 text-base md:text-lg font-light">
+                <li className="flex justify-between border-b border-[var(--color-brand-green)]/5 pb-4">
+                  <span className="font-medium">Montag</span> 
+                  <span className="text-right">08:00 - 13:00 <br className="sm:hidden"/>& 15:00 - 18:00</span>
+                </li>
+                <li className="flex justify-between border-b border-[var(--color-brand-green)]/5 pb-4">
+                  <span className="font-medium">Dienstag</span> 
+                  <span className="text-right">08:00 - 13:00 <br className="sm:hidden"/>& 15:00 - 18:00</span>
+                </li>
+                <li className="flex justify-between border-b border-[var(--color-brand-green)]/5 pb-4">
+                  <span className="font-medium">Mittwoch</span> 
+                  <span className="text-right">08:00 - 13:00 <br className="sm:hidden"/>& 15:00 - 18:00*</span>
+                </li>
+                <li className="flex justify-between border-b border-[var(--color-brand-green)]/5 pb-4">
+                  <span className="font-medium">Donnerstag</span> 
+                  <span className="text-right">08:00 - 13:00 <br className="sm:hidden"/>& 15:00 - 18:00</span>
+                </li>
+                <li className="flex justify-between pb-2">
+                  <span className="font-medium">Freitag</span> 
+                  <span className="text-right">08:00 - 13:00</span>
+                </li>
+              </ul>
+
+              <div className="mt-8 pt-6 border-t border-[var(--color-brand-green)]/10 space-y-4 text-sm font-light opacity-70 leading-relaxed">
+                <p>
+                  <strong className="font-medium text-[var(--color-brand-green)]">* Mittwochnachmittag:</strong> Nur nach individueller Vereinbarung.
+                </p>
+                <p>
+                  Ist die Praxis nicht besetzt, erfahren Sie über unseren Anrufbeantworter jederzeit, wo Sie uns erreichen beziehungsweise an wen Sie sich im Notfall wenden können.
+                </p>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* 5. STANDORTE & ANFAHRT */}
+        <section id="standorte" className="py-32 px-6 max-w-[1200px] mx-auto border-t border-[var(--color-brand-green)]/5">
           <div className="text-center mb-20">
             <h2 className="font-serif text-4xl md:text-5xl tracking-tight mb-6">Unsere Standorte & Anfahrt</h2>
             <p className="opacity-70 max-w-2xl mx-auto text-lg font-light">
@@ -221,7 +321,7 @@ export default function App() {
           </div>
         </section>
 
-        {/* 5. KARRIERE & STELLENANGEBOTE */}
+        {/* 6. KARRIERE & STELLENANGEBOTE */}
         <section id="karriere" className="bg-white py-32 px-6">
           <div className="max-w-[1200px] mx-auto">
             <div className="text-center mb-16 max-w-3xl mx-auto">
@@ -304,7 +404,7 @@ export default function App() {
           </div>
         </section>
 
-        {/* 6. PROOF (Social Proof & Bewertungen) */}
+        {/* 7. PROOF (Social Proof & Bewertungen) */}
         <section id="bewertungen" className="py-32 px-6 max-w-[1200px] mx-auto border-t border-[var(--color-brand-green)]/5">
           <div className="flex flex-col md:flex-row gap-12 items-end justify-between mb-16">
              <div className="max-w-xl">
@@ -340,7 +440,7 @@ export default function App() {
           </div>
         </section>
 
-        {/* 7. CALL TO ACTION */}
+        {/* 8. CALL TO ACTION */}
         <section className="px-6 mb-12">
           <div className="bg-[var(--color-brand-green)] text-[#fdfbf7] py-32 px-8 rounded-[40px] md:rounded-[80px] max-w-[1300px] mx-auto text-center relative overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle at center, #ffffff 1px, transparent 1px)', backgroundSize: '24px 24px' }}></div>
@@ -351,10 +451,15 @@ export default function App() {
                  Planen Sie Ihren nächsten Vorsorgetermin oder besprechen Sie Ihr Anliegen persönlich mit uns. Wir sind für Sie da.
               </p>
               <div className="pt-6">
-                <button className="bg-[var(--color-brand-accent)] hover:bg-[#d67b54] text-white px-10 py-5 rounded-full text-lg font-medium transition-all duration-300 hover:shadow-xl hover:scale-105 flex items-center mx-auto">
+                <a 
+                  href={TERMINLAND_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-[var(--color-brand-accent)] hover:bg-[#d67b54] text-white px-10 py-5 rounded-full text-lg font-medium transition-all duration-300 hover:shadow-xl hover:scale-105 inline-flex items-center mx-auto"
+                >
                   Termin online vereinbaren
                   <ArrowRight className="w-5 h-5 ml-2" />
-                </button>
+                </a>
                 <p className="mt-6 text-sm text-[#fdfbf7]/50 font-medium">Bequeme Online-Terminierung · Alle Kassen & Privatpatienten</p>
               </div>
             </div>
