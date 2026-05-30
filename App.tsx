@@ -70,7 +70,7 @@ export default function App() {
               className="w-full max-w-[400px] aspect-[4/5] rounded-[40px] md:rounded-[60px] overflow-hidden shadow-sm relative group"
            >
               <img
-                 src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?q=80&w=800&auto=format&fit=crop"
+                 src="/doktor.jpg"
                  alt="Dr. med. Klaus Peter Brucker"
                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
