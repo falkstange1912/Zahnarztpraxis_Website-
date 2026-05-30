@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { Heart, Clock, Shield, Star, ArrowRight } from "lucide-react";
+import { Heart, Clock, Shield, Star, ArrowRight, MapPin, Phone, Car, Bus } from "lucide-react";
 
 const fadeUp = {
   initial: { opacity: 0, y: 20 },
@@ -18,10 +18,10 @@ export default function App() {
       <nav className="flex items-center justify-between px-6 py-6 md:px-12 max-w-[1400px] mx-auto">
         <div className="font-serif text-2xl font-semibold tracking-tight">Praxis Brucker.</div>
         <div className="hidden md:flex space-x-10 text-sm font-medium">
-          <a href="#" className="hover:opacity-60 transition-opacity">Die Praxis</a>
-          <a href="#" className="hover:opacity-60 transition-opacity">Das Team</a>
-          <a href="#" className="hover:opacity-60 transition-opacity">Leistungen</a>
-          <a href="#" className="hover:opacity-60 transition-opacity">Kontakt</a>
+          <a href="#praxis" className="hover:opacity-60 transition-opacity">Die Praxis</a>
+          <a href="#philosophie" className="hover:opacity-60 transition-opacity">Philosophie</a>
+          <a href="#standorte" className="hover:opacity-60 transition-opacity">Standorte</a>
+          <a href="#bewertungen" className="hover:opacity-60 transition-opacity">Bewertungen</a>
         </div>
         <div className="flex items-center gap-4">
           <button className="hidden sm:block text-sm font-medium hover:opacity-60 transition-opacity">
@@ -35,7 +35,7 @@ export default function App() {
 
       <main>
         {/* 1. HOOK & 2. PROMISE OF VALUE */}
-        <section className="px-6 mt-20 md:mt-28 mb-16 max-w-5xl mx-auto text-center">
+        <section id="praxis" className="px-6 mt-20 md:mt-28 mb-16 max-w-5xl mx-auto text-center">
           <motion.div initial="initial" animate="animate" variants={stagger} className="space-y-8 flex flex-col items-center">
             <motion.h1
               variants={fadeUp}
@@ -48,7 +48,7 @@ export default function App() {
               className="text-xl md:text-2xl opacity-80 max-w-3xl font-light mx-auto leading-relaxed"
             >
               Wir vereinen moderne Allgemeinmedizin mit echter, menschlicher Begleitung. 
-              Entdecken Sie eine Hausarztpraxis in Cremlingen, bei der Ihr Wohlbefinden an erster Stelle steht.
+              Entdecken Sie eine Hausarztpraxis, bei der Ihr Wohlbefinden an erster Stelle steht.
             </motion.p>
             <motion.div variants={fadeUp} className="pt-6 flex flex-col sm:flex-row gap-4 justify-center w-full sm:w-auto">
                <button className="bg-[var(--color-brand-accent)] text-white px-8 py-3.5 rounded-full text-base font-medium hover:bg-[#d67b54] transition-colors">
@@ -71,17 +71,17 @@ export default function App() {
            >
               <img
                  src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=2000&auto=format&fit=crop"
-                 alt="Moderne Hausarztpraxis Brucker in Cremlingen"
+                 alt="Moderne Hausarztpraxis Brucker"
                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
            </motion.div>
            <div className="text-center mt-6 text-sm font-medium opacity-60 flex items-center justify-center gap-2">
-              <Shield className="w-4 h-4 text-[var(--color-brand-accent)]" /> Dr. med. Klaus Peter Brucker · Ihr Hausarzt in Cremlingen
+              <Shield className="w-4 h-4 text-[var(--color-brand-accent)]" /> Dr. med. Klaus Peter Brucker · Ihr Hausarzt in Cremlingen & Königslutter
            </div>
         </section>
 
-        {/* 3. DETAILS */}
-        <section className="bg-white py-32 px-6">
+        {/* 3. DETAILS (Philosophie) */}
+        <section id="philosophie" className="bg-white py-32 px-6">
           <div className="max-w-[1200px] mx-auto">
             <div className="text-center mb-20">
               <h2 className="font-serif text-4xl md:text-5xl tracking-tight mb-6">Fürsorge in jedem Detail</h2>
@@ -106,8 +106,122 @@ export default function App() {
           </div>
         </section>
 
-        {/* 4. PROOF (Social Proof & References) */}
-        <section className="py-32 px-6 max-w-[1200px] mx-auto">
+        {/* NEW: 4. STANDORTE & ANFAHRT */}
+        <section id="standorte" className="py-32 px-6 max-w-[1200px] mx-auto">
+          <div className="text-center mb-20">
+            <h2 className="font-serif text-4xl md:text-5xl tracking-tight mb-6">Unsere Standorte & Anfahrt</h2>
+            <p className="opacity-70 max-w-2xl mx-auto text-lg font-light">
+               Besuchen Sie uns an einem unserer zwei modernen Standorte. Beide Praxen sind vollkommen barrierefrei über einen Aufzug für Sie erreichbar.
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-8 md:gap-12">
+            {/* Standort Cremlingen */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="bg-white p-8 md:p-12 rounded-[40px] border border-[var(--color-brand-green)]/5 shadow-sm flex flex-col justify-between"
+            >
+              <div className="space-y-6">
+                <div className="flex justify-between items-start">
+                  <div>
+                    <span className="text-xs font-semibold tracking-widest uppercase text-[var(--color-brand-accent)] bg-[var(--color-brand-accent)]/10 px-4 py-1.5 rounded-full">Hauptsitz</span>
+                    <h3 className="font-serif text-3xl font-medium mt-4 mb-3">Praxis Cremlingen</h3>
+                  </div>
+                </div>
+
+                <div className="space-y-3 text-base font-light opacity-80">
+                  <p className="flex items-start gap-3">
+                    <MapPin className="w-5 h-5 text-[var(--color-brand-accent)] shrink-0 mt-0.5" />
+                    <span>Im Moorbusche 23<br />38162 Cremlingen</span>
+                  </p>
+                  <p className="flex items-center gap-3 pt-2">
+                    <Phone className="w-5 h-5 text-[var(--color-brand-accent)] shrink-0" />
+                    <a href="tel:05306990440" className="hover:underline font-medium text-[var(--color-brand-green)]">(05306) 990440</a>
+                  </p>
+                </div>
+
+                <div className="space-y-6 pt-6 border-t border-[var(--color-brand-green)]/10">
+                  <div className="space-y-1.5">
+                    <h4 className="font-medium text-sm flex items-center gap-2 text-[var(--color-brand-green)]">
+                      <Car className="w-4 h-4 text-[var(--color-brand-accent)]" /> Mit dem PKW
+                    </h4>
+                    <p className="text-sm opacity-70 font-light leading-relaxed">
+                      Aus Richtung Klein Schöppenstedt kommend auf der B1 gleich nach dem Ortseingang links abbiegend der Hauptstraße folgen. Die Praxis befindet sich auf der linken Seite über der Moorbusch Apotheke.
+                    </p>
+                  </div>
+                  <div className="space-y-1.5">
+                    <h4 className="font-medium text-sm flex items-center gap-2 text-[var(--color-brand-green)]">
+                      <Bus className="w-4 h-4 text-[var(--color-brand-accent)]" /> Mit dem Bus
+                    </h4>
+                    <p className="text-sm opacity-70 font-light leading-relaxed">
+                      Linie 452 von Braunschweig (Haltestelle "Krematorium") Richtung Bornum. Der Bus fährt u.a. über Klein Schöppenstedt und Schulenrode. Bitte in Cremlingen an der Haltestelle <strong className="font-medium">"Im Rübenkamp"</strong> aussteigen.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="mt-8 pt-4 border-t border-[var(--color-brand-green)]/5 text-xs opacity-50 font-medium">
+                Barrierefreier Zugang via Aufzug
+              </div>
+            </motion.div>
+
+            {/* Standort Königslutter */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="bg-white p-8 md:p-12 rounded-[40px] border border-[var(--color-brand-green)]/5 shadow-sm flex flex-col justify-between"
+            >
+              <div className="space-y-6">
+                <div className="flex justify-between items-start">
+                  <div>
+                    <span className="text-xs font-semibold tracking-widest uppercase text-[var(--color-brand-accent)] bg-[var(--color-brand-accent)]/10 px-4 py-1.5 rounded-full">Zweigstelle</span>
+                    <h3 className="font-serif text-3xl font-medium mt-4 mb-3">Praxis Königslutter</h3>
+                  </div>
+                </div>
+
+                <div className="space-y-3 text-base font-light opacity-80">
+                  <p className="flex items-start gap-3">
+                    <MapPin className="w-5 h-5 text-[var(--color-brand-accent)] shrink-0 mt-0.5" />
+                    <span>Amtsgarten 4<br />38154 Königslutter</span>
+                  </p>
+                  <p className="flex items-center gap-3 pt-2">
+                    <Phone className="w-5 h-5 text-[var(--color-brand-accent)] shrink-0" />
+                    <a href="tel:05353990000" className="hover:underline font-medium text-[var(--color-brand-green)]">(05353) 990000</a>
+                  </p>
+                </div>
+
+                <div className="space-y-6 pt-6 border-t border-[var(--color-brand-green)]/10">
+                  <div className="space-y-1.5">
+                    <h4 className="font-medium text-sm flex items-center gap-2 text-[var(--color-brand-green)]">
+                      <Car className="w-4 h-4 text-[var(--color-brand-accent)]" /> Mit dem PKW
+                    </h4>
+                    <p className="text-sm opacity-70 font-light leading-relaxed">
+                      Die Praxis befindet sich in der zweiten Etage rechts im Ärzte- und Therapiezentrum im CentroKö in Königslutter. Es sind ausreichend Parkplätze vor Ort vorhanden.
+                    </p>
+                  </div>
+                  <div className="space-y-1.5">
+                    <h4 className="font-medium text-sm flex items-center gap-2 text-[var(--color-brand-green)]">
+                      <Bus className="w-4 h-4 text-[var(--color-brand-accent)]" /> Mit dem Bus
+                    </h4>
+                    <p className="text-sm opacity-70 font-light leading-relaxed">
+                      Für die optimale Verbindung mit dem Bus informieren Sie sich bitte direkt über die elektronische Fahrplanauskunft für den Standort Königslutter.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="mt-8 pt-4 border-t border-[var(--color-brand-green)]/5 text-xs opacity-50 font-medium flex justify-between">
+                <span>Barrierefreier Zugang via Aufzug</span>
+                <span>Behinderten-WC vorhanden</span>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* 5. PROOF (Social Proof & Bewertungen) */}
+        <section id="bewertungen" className="py-32 px-6 max-w-[1200px] mx-auto border-t border-[var(--color-brand-green)]/5">
           <div className="flex flex-col md:flex-row gap-12 items-end justify-between mb-16">
              <div className="max-w-xl">
                <h2 className="font-serif text-4xl md:text-5xl tracking-tight mb-6">Das sagen unsere Patienten</h2>
@@ -142,7 +256,7 @@ export default function App() {
           </div>
         </section>
 
-        {/* 5. CALL TO ACTION */}
+        {/* 6. CALL TO ACTION */}
         <section className="px-6 mb-12">
           <div className="bg-[var(--color-brand-green)] text-[#fdfbf7] py-32 px-8 rounded-[40px] md:rounded-[80px] max-w-[1300px] mx-auto text-center relative overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle at center, #ffffff 1px, transparent 1px)', backgroundSize: '24px 24px' }}></div>
