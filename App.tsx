@@ -16,12 +16,12 @@ export default function App() {
     <div className="min-h-screen bg-[var(--color-brand-bg)] text-[var(--color-brand-green)] font-sans overflow-x-hidden selection:bg-[var(--color-brand-accent)] selection:text-white">
       {/* Navbar */}
       <nav className="flex items-center justify-between px-6 py-6 md:px-12 max-w-[1400px] mx-auto">
-        <div className="font-serif text-2xl font-semibold tracking-tight">Kollektiv.</div>
+        <div className="font-serif text-2xl font-semibold tracking-tight">Praxis Brucker.</div>
         <div className="hidden md:flex space-x-10 text-sm font-medium">
           <a href="#" className="hover:opacity-60 transition-opacity">Die Praxis</a>
           <a href="#" className="hover:opacity-60 transition-opacity">Das Team</a>
           <a href="#" className="hover:opacity-60 transition-opacity">Leistungen</a>
-          <a href="#" className="hover:opacity-60 transition-opacity">Wissenschaft</a>
+          <a href="#" className="hover:opacity-60 transition-opacity">Kontakt</a>
         </div>
         <div className="flex items-center gap-4">
           <button className="hidden sm:block text-sm font-medium hover:opacity-60 transition-opacity">
@@ -35,52 +35,63 @@ export default function App() {
 
       <main>
         {/* 1. HOOK & 2. PROMISE OF VALUE */}
-        <section className="px-6 mt-20 md:mt-28 mb-20 max-w-5xl mx-auto text-center">
+        <section className="px-6 mt-20 md:mt-28 mb-16 max-w-5xl mx-auto text-center">
           <motion.div initial="initial" animate="animate" variants={stagger} className="space-y-8 flex flex-col items-center">
             <motion.h1
               variants={fadeUp}
               className="font-serif text-5xl md:text-[5.5rem] leading-[1.05] tracking-tight"
             >
-              Lernen Sie die Menschen hinter Ihrem Lächeln kennen.
+              Lernen Sie den Menschen hinter Ihrem Lächeln kennen.
             </motion.h1>
             <motion.p
               variants={fadeUp}
               className="text-xl md:text-2xl opacity-80 max-w-3xl font-light mx-auto leading-relaxed"
             >
               Wir vereinen exzellente Zahnmedizin mit echter, persönlicher Fürsorge. 
-              Entdecken Sie ein Praxisteam, bei der Sie als Mensch vollständig im Mittelpunkt stehen.
+              Entdecken Sie eine Praxis, bei der Sie als Mensch vollständig im Mittelpunkt stehen.
             </motion.p>
             <motion.div variants={fadeUp} className="pt-6 flex flex-col sm:flex-row gap-4 justify-center w-full sm:w-auto">
                <button className="bg-[var(--color-brand-accent)] text-white px-8 py-3.5 rounded-full text-base font-medium hover:bg-[#d67b54] transition-colors">
-                 Abonnieren & 20% sparen
+                 Termin vereinbaren
                </button>
                <button className="border border-[var(--color-brand-green)] px-8 py-3.5 rounded-full text-base font-medium hover:bg-[var(--color-brand-green)] hover:text-white transition-colors">
-                 Termin vereinbaren
+                 Unsere Leistungen
                </button>
             </motion.div>
           </motion.div>
         </section>
 
-        {/* Hero Image (Pill shaped based on reference "inne") */}
-        <section className="px-6 mb-32 max-w-[1200px] mx-auto">
+        {/* Hero Image (Dr. Brucker Profile) */}
+        <section className="px-6 mb-32 max-w-[1200px] mx-auto flex flex-col items-center">
            <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-              className="w-full aspect-[16/9] md:aspect-[21/9] rounded-[40px] md:rounded-[200px] overflow-hidden shadow-sm relative group"
+              className="w-full max-w-[400px] aspect-[4/5] rounded-[40px] md:rounded-[60px] overflow-hidden shadow-sm relative group"
            >
               <img
-                 src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=2000&auto=format&fit=crop"
-                 alt="Das hochqualifizierte zahnmedizinische Praxisteam"
+                 src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?q=80&w=800&auto=format&fit=crop"
+                 alt="Dr. med. Klaus Peter Brucker"
                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
            </motion.div>
-           <div className="text-center mt-6 text-sm font-medium opacity-60 flex items-center justify-center gap-2">
-              <Shield className="w-4 h-4" /> 100% Zufriedenheitsgarantie
-           </div>
+           
+           <motion.div 
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              className="text-center mt-8"
+           >
+              <h2 className="font-serif text-3xl md:text-4xl font-medium mb-3 text-[var(--color-brand-green)]">
+                 Dr. med. Klaus Peter Brucker
+              </h2>
+              <p className="text-lg opacity-70 font-light flex items-center justify-center gap-2">
+                 <Shield className="w-4 h-4 text-[var(--color-brand-accent)]" /> Ihr vertrauensvoller Zahnarzt in Cremlingen
+              </p>
+           </motion.div>
         </section>
 
-        {/* 3. DETAILS (3 specific points detailing the promise) */}
+        {/* 3. DETAILS */}
         <section className="bg-white py-32 px-6">
           <div className="max-w-[1200px] mx-auto">
             <div className="text-center mb-20">
@@ -116,11 +127,10 @@ export default function App() {
              <div className="max-w-xl">
                <h2 className="font-serif text-4xl md:text-5xl tracking-tight mb-6">Das sagen unsere Patienten</h2>
                <p className="opacity-70 text-lg font-light">
-                  Vertrauen muss man sich verdienen. Über 4.500 zufriedene Patienten haben bei uns ihr strahlendes Lächeln wiedergefunden.
+                  Vertrauen muss man sich verdienen. Viele zufriedene Patienten haben bei uns ihr strahlendes Lächeln wiedergefunden.
                </p>
              </div>
              <div className="flex -space-x-4 mb-4">
-                {/* Simulated avatars for social proof */}
                 <img className="w-12 h-12 rounded-full border-2 border-[var(--color-brand-bg)] object-cover" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=200&auto=format&fit=crop" alt="" />
                 <img className="w-12 h-12 rounded-full border-2 border-[var(--color-brand-bg)] object-cover" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=200&auto=format&fit=crop" alt="" />
                 <img className="w-12 h-12 rounded-full border-2 border-[var(--color-brand-bg)] object-cover" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=200&auto=format&fit=crop" alt="" />
@@ -130,7 +140,7 @@ export default function App() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
              <Testimonial
-                text="Ich hatte mein ganzes Leben lang große Angst vor dem Zahnarzt. Das gesamte Praxisteam hat mich so warmherzig empfangen, dass meine Sorgen sofort verflogen sind."
+                text="Ich hatte mein ganzes Leben lang große Angst vor dem Zahnarzt. Dr. Brucker und das Praxisteam haben mich so warmherzig empfangen, dass meine Sorgen sofort verflogen sind."
                 author="Laura M."
                 details="Patientin seit 2021"
              />
@@ -140,7 +150,7 @@ export default function App() {
                 details="Patient seit 2023"
              />
              <Testimonial
-                text="Endlich ein Zahnarztteam, das sich wirklich Zeit nimmt. Das Ergebnis meiner Behandlung ist perfekt geworden. Großes Lob und Danke an jeden Einzelnen!"
+                text="Endlich ein Zahnarzt, der sich wirklich Zeit nimmt. Das Ergebnis meiner Behandlung ist perfekt geworden. Großes Lob und Danke an jeden Einzelnen!"
                 author="Sabine K."
                 details="Patientin seit 2019"
              />
@@ -155,7 +165,7 @@ export default function App() {
             <div className="max-w-4xl mx-auto space-y-10 relative z-10">
               <h2 className="font-serif text-5xl md:text-[5rem] leading-[1.05] tracking-tight">Erleben Sie den Unterschied.</h2>
               <p className="text-[#fdfbf7]/80 text-xl md:text-2xl font-light max-w-2xl mx-auto">
-                 Machen Sie den ersten Schritt zu einem gesunden Lächeln. Unser Team freut sich darauf, Sie kennenzulernen.
+                 Machen Sie den ersten Schritt zu einem gesunden Lächeln. Wir freuen uns darauf, Sie kennenzulernen.
               </p>
               <div className="pt-6">
                 <button className="bg-[var(--color-brand-accent)] hover:bg-[#d67b54] text-white px-10 py-5 rounded-full text-lg font-medium transition-all duration-300 hover:shadow-xl hover:scale-105 flex items-center mx-auto">
@@ -171,7 +181,7 @@ export default function App() {
 
       {/* Footer */}
       <footer className="py-12 px-6 max-w-[1400px] mx-auto border-t border-[var(--color-brand-green)]/10 flex flex-col md:flex-row justify-between items-center gap-4 text-sm opacity-60">
-        <p>© 2026 Kollektiv Zahnmedizin. Alle Rechte vorbehalten.</p>
+        <p>© 2026 Praxis Brucker. Alle Rechte vorbehalten.</p>
         <div className="flex gap-6">
           <a href="#" className="hover:opacity-100 transition-opacity">Impressum</a>
           <a href="#" className="hover:opacity-100 transition-opacity">Datenschutz</a>
