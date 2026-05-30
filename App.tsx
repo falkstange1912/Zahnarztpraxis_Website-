@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { Heart, Clock, Shield, Star, ArrowRight, MapPin, Phone, Car, Bus } from "lucide-react";
+import { Heart, Clock, Shield, Star, ArrowRight, MapPin, Phone, Car, Bus, CheckCircle, Mail } from "lucide-react";
 
 const fadeUp = {
   initial: { opacity: 0, y: 20 },
@@ -17,10 +17,11 @@ export default function App() {
       {/* Navbar */}
       <nav className="flex items-center justify-between px-6 py-6 md:px-12 max-w-[1400px] mx-auto">
         <div className="font-serif text-2xl font-semibold tracking-tight">Praxis Brucker.</div>
-        <div className="hidden md:flex space-x-10 text-sm font-medium">
+        <div className="hidden lg:flex space-x-8 text-sm font-medium">
           <a href="#praxis" className="hover:opacity-60 transition-opacity">Die Praxis</a>
           <a href="#philosophie" className="hover:opacity-60 transition-opacity">Philosophie</a>
           <a href="#standorte" className="hover:opacity-60 transition-opacity">Standorte</a>
+          <a href="#karriere" className="hover:opacity-60 transition-opacity text-[var(--color-brand-accent)]">Karriere</a>
           <a href="#bewertungen" className="hover:opacity-60 transition-opacity">Bewertungen</a>
         </div>
         <div className="flex items-center gap-4">
@@ -106,7 +107,7 @@ export default function App() {
           </div>
         </section>
 
-        {/* NEW: 4. STANDORTE & ANFAHRT */}
+        {/* 4. STANDORTE & ANFAHRT */}
         <section id="standorte" className="py-32 px-6 max-w-[1200px] mx-auto">
           <div className="text-center mb-20">
             <h2 className="font-serif text-4xl md:text-5xl tracking-tight mb-6">Unsere Standorte & Anfahrt</h2>
@@ -220,7 +221,90 @@ export default function App() {
           </div>
         </section>
 
-        {/* 5. PROOF (Social Proof & Bewertungen) */}
+        {/* 5. KARRIERE & STELLENANGEBOTE */}
+        <section id="karriere" className="bg-white py-32 px-6">
+          <div className="max-w-[1200px] mx-auto">
+            <div className="text-center mb-16 max-w-3xl mx-auto">
+              <span className="text-sm font-bold tracking-widest uppercase text-[var(--color-brand-accent)] mb-4 block">Karriere</span>
+              <h2 className="font-serif text-4xl md:text-5xl tracking-tight mb-6">Werden Sie Teil unseres Teams</h2>
+              <p className="opacity-70 text-lg font-light leading-relaxed">
+                Unsere Arztpraxis ist auch Arbeitsplatz für qualifizierte Mitarbeiter unterschiedlicher Gesundheitsberufe. 
+                Sie erwartet ein interessantes Tätigkeitsfeld in einer modern ausgestatteten Arztpraxis mit vorbildlichen Arbeitsbedingungen.
+              </p>
+            </div>
+
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="bg-[var(--color-brand-bg)] border border-[var(--color-brand-green)]/10 rounded-[40px] p-8 md:p-14 shadow-sm"
+            >
+              <div className="mb-10 pb-10 border-b border-[var(--color-brand-green)]/10">
+                <div className="inline-block bg-[var(--color-brand-accent)]/10 text-[var(--color-brand-accent)] px-4 py-1.5 rounded-full text-sm font-semibold mb-4">
+                  Voll- oder Teilzeit
+                </div>
+                <h3 className="font-serif text-3xl md:text-4xl font-medium mb-4">Medizinische Fachangestellte / Krankenschwester (m/w/d)</h3>
+                <p className="opacity-70 text-lg font-light">
+                  Für unser engagiertes Praxisteam suchen wir zum nächstmöglichen Zeitpunkt Verstärkung. Auch Berufsanfänger, Quereinsteiger und Wiedereinsteiger sind bei uns herzlich willkommen!
+                </p>
+              </div>
+
+              <div className="grid md:grid-cols-3 gap-10 md:gap-8 mb-12">
+                <div className="space-y-4">
+                  <h4 className="font-serif text-2xl mb-6">Das erwartet Sie</h4>
+                  <ul className="space-y-3 opacity-80 font-light text-sm md:text-base">
+                    <li className="flex gap-3"><CheckCircle className="w-5 h-5 text-[var(--color-brand-accent)] shrink-0" /> Ein kollegiales, wertschätzendes Umfeld</li>
+                    <li className="flex gap-3"><CheckCircle className="w-5 h-5 text-[var(--color-brand-accent)] shrink-0" /> Moderne Ausstattung & digitale Prozesse</li>
+                    <li className="flex gap-3"><CheckCircle className="w-5 h-5 text-[var(--color-brand-accent)] shrink-0" /> Geregelte Arbeitszeiten (ohne Wochenende)</li>
+                    <li className="flex gap-3"><CheckCircle className="w-5 h-5 text-[var(--color-brand-accent)] shrink-0" /> Leistungsgerechte Vergütung</li>
+                    <li className="flex gap-3"><CheckCircle className="w-5 h-5 text-[var(--color-brand-accent)] shrink-0" /> Betriebliche Altersvorsorge</li>
+                    <li className="flex gap-3"><CheckCircle className="w-5 h-5 text-[var(--color-brand-accent)] shrink-0" /> Diverse Fort- und Weiterbildungen</li>
+                  </ul>
+                </div>
+
+                <div className="space-y-4">
+                  <h4 className="font-serif text-2xl mb-6">Ihre Aufgaben</h4>
+                  <ul className="space-y-3 opacity-80 font-light text-sm md:text-base">
+                    <li className="flex gap-3"><CheckCircle className="w-5 h-5 text-[var(--color-brand-green)] shrink-0" /> Patientenempfang und -betreuung</li>
+                    <li className="flex gap-3"><CheckCircle className="w-5 h-5 text-[var(--color-brand-green)] shrink-0" /> Terminvergabe & Praxisorganisation</li>
+                    <li className="flex gap-3"><CheckCircle className="w-5 h-5 text-[var(--color-brand-green)] shrink-0" /> Assistenz bei Untersuchungen</li>
+                    <li className="flex gap-3"><CheckCircle className="w-5 h-5 text-[var(--color-brand-green)] shrink-0" /> Labor- und Blutentnahmen</li>
+                    <li className="flex gap-3"><CheckCircle className="w-5 h-5 text-[var(--color-brand-green)] shrink-0" /> Abrechnung nach EBM & GOÄ (mit Einarbeitung)</li>
+                    <li className="flex gap-3"><CheckCircle className="w-5 h-5 text-[var(--color-brand-green)] shrink-0" /> Verwaltungsaufgaben & Dokumentation</li>
+                  </ul>
+                </div>
+
+                <div className="space-y-4">
+                  <h4 className="font-serif text-2xl mb-6">Ihr Profil</h4>
+                  <ul className="space-y-3 opacity-80 font-light text-sm md:text-base">
+                    <li className="flex gap-3"><CheckCircle className="w-5 h-5 text-[var(--color-brand-green)] shrink-0" /> Abgeschlossene Ausbildung (MFA / Krankenschwester)</li>
+                    <li className="flex gap-3"><CheckCircle className="w-5 h-5 text-[var(--color-brand-green)] shrink-0" /> Freundliches & professionelles Auftreten</li>
+                    <li className="flex gap-3"><CheckCircle className="w-5 h-5 text-[var(--color-brand-green)] shrink-0" /> Organisationstalent & Teamfähigkeit</li>
+                    <li className="flex gap-3"><CheckCircle className="w-5 h-5 text-[var(--color-brand-green)] shrink-0" /> Selbstständige, gewissenhafte Arbeitsweise</li>
+                    <li className="flex gap-3"><CheckCircle className="w-5 h-5 text-[var(--color-brand-green)] shrink-0" /> Gute EDV-Kenntnisse</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div className="bg-white p-8 rounded-[24px] text-center border border-[var(--color-brand-green)]/10">
+                <h4 className="font-serif text-2xl mb-2">Interesse geweckt?</h4>
+                <p className="opacity-70 font-light mb-6">
+                  Wir freuen uns auf Ihre aussagekräftige Bewerbung (schriftlich) mit Lebenslauf und Zeugnissen.
+                </p>
+                <a 
+                  href="mailto:bewerbung@dr-brucker.de" 
+                  className="inline-flex items-center justify-center gap-2 bg-[var(--color-brand-accent)] hover:bg-[#d67b54] text-white px-8 py-4 rounded-full text-base font-medium transition-colors shadow-sm"
+                >
+                  <Mail className="w-5 h-5" />
+                  Bewerbung per E-Mail senden
+                </a>
+                <p className="mt-4 text-xs opacity-50 font-medium">bewerbung@dr-brucker.de</p>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* 6. PROOF (Social Proof & Bewertungen) */}
         <section id="bewertungen" className="py-32 px-6 max-w-[1200px] mx-auto border-t border-[var(--color-brand-green)]/5">
           <div className="flex flex-col md:flex-row gap-12 items-end justify-between mb-16">
              <div className="max-w-xl">
@@ -256,7 +340,7 @@ export default function App() {
           </div>
         </section>
 
-        {/* 6. CALL TO ACTION */}
+        {/* 7. CALL TO ACTION */}
         <section className="px-6 mb-12">
           <div className="bg-[var(--color-brand-green)] text-[#fdfbf7] py-32 px-8 rounded-[40px] md:rounded-[80px] max-w-[1300px] mx-auto text-center relative overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle at center, #ffffff 1px, transparent 1px)', backgroundSize: '24px 24px' }}></div>
