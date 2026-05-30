@@ -1,0 +1,6 @@
+{
+  "name": "Zahnarztpraxis Team",
+  "description": "Zahnarztpraxis Landing Page im eleganten, minimalistischen Design, inspiriert von Premium-Healthcare-Marken.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
